@@ -56,7 +56,7 @@ class Dataset(data.Dataset):
         else:
             assert split.lower() in ['train', 'test', 'all']
 
-        if dataset_name not in ['shapenetcorev2', 'shapenetpart'] and segmentation == True:
+        if dataset_name not in ['shapenetpart'] and segmentation == True:
             raise AssertionError
 
         self.root = os.path.join(root, dataset_name + '_' + '*hdf5_2048')
