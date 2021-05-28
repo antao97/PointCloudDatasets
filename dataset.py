@@ -16,6 +16,9 @@ import numpy as np
 import torch.utils.data as data
 
 
+shapenetpart_cat2id = {'airplane': 0, 'bag': 1, 'cap': 2, 'car': 3, 'chair': 4, 
+                       'earphone': 5, 'guitar': 6, 'knife': 7, 'lamp': 8, 'laptop': 9, 
+                       'motor': 10, 'mug': 11, 'pistol': 12, 'rocket': 13, 'skateboard': 14, 'table': 15}
 shapenetpart_seg_num = [4, 2, 2, 4, 4, 3, 3, 2, 4, 2, 6, 2, 3, 3, 3, 3]
 shapenetpart_seg_start_index = [0, 4, 6, 8, 12, 16, 19, 22, 24, 28, 30, 36, 38, 41, 44, 47]
 
@@ -105,6 +108,7 @@ class Dataset(data.Dataset):
             self.label = self.label[indices]
             if self.segmentation:
                 self.seg = self.seg[indices]
+                id_choice = shapenetpart_cat2id[class_choice]
                 self.seg_num_all = shapenetpart_seg_num[id_choice]
                 self.seg_start_index = shapenetpart_seg_start_index[id_choice]
             if self.load_file:
