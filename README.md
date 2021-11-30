@@ -9,11 +9,11 @@ To visualize, run `visualize.py` to generate XML file and use [Mitsuba](https://
 &nbsp;
 ## Download link:
 
-- ShapeNetCore.v2 (0.98G)&ensp;[[Dropbox]](https://www.dropbox.com/s/cszkbla2pgglapb/shapenetcorev2_hdf5_2048.zip?dl=0)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/154As2kzHZczMipuoZIc0kg)
-- ShapeNetPart (338M)&ensp;[[Dropbox]](https://www.dropbox.com/s/i54hoc0p9rvkh3n/shapenetpart_hdf5_2048.zip?dl=0)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1yi4bMVBE2mV8NqVRtNLoqw)
-- ShapeNetPart Part (450M)&ensp;[[Dropbox]](https://www.dropbox.com/s/fy6el7hc7r36e0j/shapenetpartpart_hdf5_2048.zip?dl=0)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1uCotFveZ5R5ztRPIm1hfJQ)
-- ModelNet40 (194M)&ensp;[[Dropbox]](https://www.dropbox.com/s/ea4arug1itihb8f/modelnet40_hdf5_2048.zip?dl=0)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1NQZgN8tvHVqQntxefcdVAg)
-- ModelNet10 (72.5M)&ensp;[[Dropbox]](https://www.dropbox.com/s/d5tnwg2legbd6rh/modelnet10_hdf5_2048.zip?dl=0)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1tfnKQ_yg3SfIgyLSwQ2E0g)
+- ShapeNetCore.v2 (0.98G)&ensp;[[TsinghuaCloud]](https://cloud.tsinghua.edu.cn/f/06a3c383dc474179b97d/)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/154As2kzHZczMipuoZIc0kg)
+- ShapeNetPart (338M)&ensp;[[TsinghuaCloud]](https://cloud.tsinghua.edu.cn/f/c25d94e163454196a26b/)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1yi4bMVBE2mV8NqVRtNLoqw)
+- ShapeNetPart Part (450M)&ensp;[[TsinghuaCloud]](https://cloud.tsinghua.edu.cn/f/b6ee6e3b345744889e6b/)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1uCotFveZ5R5ztRPIm1hfJQ)
+- ModelNet40 (194M)&ensp;[[TsinghuaCloud]](https://cloud.tsinghua.edu.cn/f/b3d9fe3e2a514def8097/)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1NQZgN8tvHVqQntxefcdVAg)
+- ModelNet10 (72.5M)&ensp;[[TsinghuaCloud]](https://cloud.tsinghua.edu.cn/f/5414376f6afd41ce9b6d/)&ensp;[[BaiduDisk]](https://pan.baidu.com/s/1tfnKQ_yg3SfIgyLSwQ2E0g)
 
 &nbsp;
 ## ShapeNetCore.v2
@@ -82,7 +82,7 @@ Repos below use our datasets:
 
 &nbsp;
 
-#### Reference repos:  
+#### Reference repos:
 
 - [charlesq34/pointnet](https://github.com/charlesq34/pointnet)
 - [charlesq34/pointnet2](https://github.com/charlesq34/pointnet2)  
