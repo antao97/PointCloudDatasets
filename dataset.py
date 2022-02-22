@@ -91,11 +91,11 @@ class Dataset(data.Dataset):
 
         if self.load_name or self.class_choice != None:
             self.path_name_all.sort()
-            self.name = self.load_json(self.path_name_all)    # load label name
+            self.name = np.array(self.load_json(self.path_name_all))    # load label name
 
         if self.load_file:
             self.path_file_all.sort()
-            self.file = self.load_json(self.path_file_all)    # load file name
+            self.file = np.array(self.load_json(self.path_file_all))    # load file name
         
         self.data = np.concatenate(data, axis=0)
         self.label = np.concatenate(label, axis=0) 
@@ -103,9 +103,10 @@ class Dataset(data.Dataset):
             self.seg = np.concatenate(seg, axis=0) 
 
         if self.class_choice != None:
-            indices = (self.name == class_choice).squeeze()
+            indices = (self.name == class_choice)
             self.data = self.data[indices]
             self.label = self.label[indices]
+            self.name = self.name[indices]
             if self.segmentation:
                 self.seg = self.seg[indices]
                 id_choice = shapenetpart_cat2id[class_choice]
