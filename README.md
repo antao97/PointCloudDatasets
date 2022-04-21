@@ -18,7 +18,7 @@ To visualize, run `visualize.py` to generate XML file and use [Mitsuba](https://
 ## ShapeNetCore.v2
 ShapeNetCore.v2 datset contains 51,127 pre-aligned shapes from 55 categories, which are split into 35,708 (70%) for training, 5,158 (10%) shapes for validation and 10,261 (20%) shapes for testing. In official document there should be 51,190 shapes in total, but 63 shapes are missing in original downloaded ShapeNetCore.v2 dataset from [here](https://www.shapenet.org/download/shapenetcore). 
 
-The 55 categories includes: `airplane`, `bag`, `basket`, `bathtub`, `bed`, `bench`, `birdhouse`, `bookshelf`, `bottle`, `bowl`, `bus`, `cabinet`, `camera`, `can`, `cap`, `car`, `cellphone`, `chair`, `clock`, `dishwasher`, `earphone`, `faucet`, `file`, `guitar`, `helmet`, `jar`, `keyboard`, `knife`, `lamp`, `laptop`, `mailbox`, `microphone`, `microwave`, `monitor`, `motorcycle`, `mug`, `piano`, `pillow`, `pistol`, `pot`, `printer`, `remote_control`, `rifle`, `rocket`, `skateboard`, `sofa`, `speaker`, `stove`, `table`, `telephone`, `tin_can`, `tower`, `train`, `vessel`, `washer`.
+The 55 categories include: `airplane`, `bag`, `basket`, `bathtub`, `bed`, `bench`, `birdhouse`, `bookshelf`, `bottle`, `bowl`, `bus`, `cabinet`, `camera`, `can`, `cap`, `car`, `cellphone`, `chair`, `clock`, `dishwasher`, `earphone`, `faucet`, `file`, `guitar`, `helmet`, `jar`, `keyboard`, `knife`, `lamp`, `laptop`, `mailbox`, `microphone`, `microwave`, `monitor`, `motorcycle`, `mug`, `piano`, `pillow`, `pistol`, `pot`, `printer`, `remote_control`, `rifle`, `rocket`, `skateboard`, `sofa`, `speaker`, `stove`, `table`, `telephone`, `tin_can`, `tower`, `train`, `vessel`, `washer`.
 
 Some visualized point clouds in our ShapeNetCore.v2 dataset:
 <p float="left">
@@ -32,7 +32,7 @@ Some visualized point clouds in our ShapeNetCore.v2 dataset:
 ## ShapeNetPart
 ShapeNetPart dataset contains 16,881 pre-aligned shapes from 16 categories, annotated with 50 segmentation parts in total. Most object categories are labeled with two to five segmentation parts. There are 12,137 (70%) shapes for training, 1,870 (10%) shapes for validation, and 2,874 (20%) shapes for testing. We also pack the segementation label in our dataset. The link for official dataset is [here](https://shapenet.cs.stanford.edu/media/shapenet_part_seg_hdf5_data.zip).
 
-The 16 categories includes: `airplane`, `bag`, `cap`, `car`, `chair`, `earphone`, `guitar`, `knife`, `lamp`, `laptop`, `motorbike`, `mug`, `pistol`, `rocket`, `skateboard`, `table`.
+The 16 categories include: `airplane`, `bag`, `cap`, `car`, `chair`, `earphone`, `guitar`, `knife`, `lamp`, `laptop`, `motorbike`, `mug`, `pistol`, `rocket`, `skateboard`, `table`.
 
 Although ShapeNetPart is made from ShapeNetCore, the number of points per shape in official ShapeNetPart dataset is not very large and sometimes less than 2,048. Thus the uniform sampling quality of our ShapeNetPart dataset is lower than our ShapeNetCore.v2 dataset. 
 
@@ -50,7 +50,7 @@ Some visualized point clouds in our ShapeNetPart dataset:
 ## ModelNet40
 ModelNet40 dataset contains 12,311 pre-aligned shapes from 40 categories, which are split into 9,843 (80%) for training and 2,468 (20%) for testing. The link for official dataset is [here](http://3dvision.princeton.edu/projects/2014/3DShapeNets/ModelNet10.zip).
 
-The 40 categories includes: `airplane`, `bathtub`, `bed`, `bench`, `bookshelf`, `bottle`, `bowl`, `car`, `chair`, `cone`, `cup`, `curtain`, `desk`, `door`, `dresser`, `flower_pot`, `glass_box`, `guitar`, `keyboard`, `lamp`, `laptop`, `mantel`, `monitor`, `night_stand`, `person`, `piano`, `plant`, `radio`, `range_hood`, `sink`, `sofa`, `stairs`, `stool`, `table`, `tent`, `toilet`, `tv_stand`, `vase`, `wardrobe`, `xbox`.
+The 40 categories include: `airplane`, `bathtub`, `bed`, `bench`, `bookshelf`, `bottle`, `bowl`, `car`, `chair`, `cone`, `cup`, `curtain`, `desk`, `door`, `dresser`, `flower_pot`, `glass_box`, `guitar`, `keyboard`, `lamp`, `laptop`, `mantel`, `monitor`, `night_stand`, `person`, `piano`, `plant`, `radio`, `range_hood`, `sink`, `sofa`, `stairs`, `stool`, `table`, `tent`, `toilet`, `tv_stand`, `vase`, `wardrobe`, `xbox`.
 
 **Note**: The widely used 2,048 points sampled ModelNet40 dataset ([link](https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip)) only contains 9,840 shapes for training, not 9,843 in official. Our ModelNet40 dataset fixs this problem and can substitute the above mentioned dataset perfectly.
 
@@ -66,7 +66,7 @@ Some visualized point clouds in our ModelNet40 dataset:
 ## ModelNet10
 ModelNet10 dataset is a part of ModelNet40 dataset, containing 4,899 pre-aligned shapes from 10 categories. There are 3,991 (80%) shapes for training and 908 (20%) shapes for testing. The link for official dataset is [here](http://modelnet.cs.princeton.edu/ModelNet40.zip).
 
-The 10 categories includes: `bathtub`, `bed`, `chair`, `desk`, `dresser`, `monitor`, `night_stand`, `sofa`, `table`, `toilet`.
+The 10 categories include: `bathtub`, `bed`, `chair`, `desk`, `dresser`, `monitor`, `night_stand`, `sofa`, `table`, `toilet`.
 
 &nbsp;
 ## Dataset performance
