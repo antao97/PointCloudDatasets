@@ -175,7 +175,7 @@ class Dataset(data.Dataset):
         label = label.squeeze(0)
         
         if self.segmentation:
-            seg = self.seg[item]
+            seg = self.seg[item][:self.num_points]
             seg = torch.from_numpy(seg)
             return point_set, label, seg, name, file
         else:
