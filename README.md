@@ -72,7 +72,7 @@ The 10 categories include: `bathtub`, `bed`, `chair`, `desk`, `dresser`, `monito
 ## Dataset performance
 Repos below use our datasets:
 
-- [AnTao97/UnsupervisedPointCloudReconstruction](https://github.com/AnTao97/UnsupervisedPointCloudReconstruction)
+- [antao97/UnsupervisedPointCloudReconstruction](https://github.com/antao97/UnsupervisedPointCloudReconstruction)
 - coming soon ...
 
 &nbsp;
