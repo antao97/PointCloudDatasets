@@ -18,7 +18,7 @@ import torch.utils.data as data
 
 shapenetpart_cat2id = {'airplane': 0, 'bag': 1, 'cap': 2, 'car': 3, 'chair': 4, 
                        'earphone': 5, 'guitar': 6, 'knife': 7, 'lamp': 8, 'laptop': 9, 
-                       'motorbike': 10, 'mug': 11, 'pistol': 12, 'rocket': 13, 'skateboard': 14, 'table': 15}
+                       'motor': 10, 'mug': 11, 'pistol': 12, 'rocket': 13, 'skateboard': 14, 'table': 15}
 shapenetpart_seg_num = [4, 2, 2, 4, 4, 3, 3, 2, 4, 2, 6, 2, 3, 3, 3, 3]
 shapenetpart_seg_start_index = [0, 4, 6, 8, 12, 16, 19, 22, 24, 28, 30, 36, 38, 41, 44, 47]
 
@@ -62,7 +62,7 @@ class Dataset(data.Dataset):
         if dataset_name not in ['shapenetpart'] and segmentation == True:
             raise AssertionError
 
-        self.root = os.path.join(root, dataset_name + '_' + '*hdf5_2048')
+        self.root = os.path.join(root, dataset_name + '_hdf5_2048')
         self.dataset_name = dataset_name
         self.class_choice = class_choice
         self.num_points = num_points
@@ -78,23 +78,20 @@ class Dataset(data.Dataset):
         self.path_name_all = []
         self.path_file_all = []
 
-        if self.split in ['train','trainval','all']:   
+        if self.split in ['train', 'trainval', 'all']:   
             self.get_path('train')
         if self.dataset_name in ['shapenetcorev2', 'shapenetpart', 'shapenetpartpart']:
-            if self.split in ['val','trainval','all']: 
+            if self.split in ['val', 'trainval', 'all']: 
                 self.get_path('val')
         if self.split in ['test', 'all']:   
             self.get_path('test')
 
-        self.path_h5py_all.sort()
         data, label, seg = self.load_h5py(self.path_h5py_all)
 
         if self.load_name or self.class_choice != None:
-            self.path_name_all.sort()
             self.name = np.array(self.load_json(self.path_name_all))    # load label name
 
         if self.load_file:
-            self.path_file_all.sort()
             self.file = np.array(self.load_json(self.path_file_all))    # load file name
         
         self.data = np.concatenate(data, axis=0)
@@ -119,14 +116,16 @@ class Dataset(data.Dataset):
             self.seg_start_index = 0
 
     def get_path(self, type):
-        path_h5py = os.path.join(self.root, '*%s*.h5'%type)
-        self.path_h5py_all += glob(path_h5py)
+        path_h5py = os.path.join(self.root, '%s*.h5'%type)
+        paths = glob(path_h5py)
+        paths_sort = [os.path.join(self.root, type + str(i) + '.h5') for i in range(len(paths))]
+        self.path_h5py_all += paths_sort
         if self.load_name:
-            path_json = os.path.join(self.root, '%s*_id2name.json'%type)
-            self.path_name_all += glob(path_json)
+            paths_json = [os.path.join(self.root, type + str(i) + '_id2name.json') for i in range(len(paths))]
+            self.path_name_all += paths_json
         if self.load_file:
-            path_json = os.path.join(self.root, '%s*_id2file.json'%type)
-            self.path_file_all += glob(path_json)
+            paths_json = [os.path.join(self.root, type + str(i) + '_id2file.json') for i in range(len(paths))]
+            self.path_file_all += paths_json
         return 
 
     def load_h5py(self, path):
@@ -175,7 +174,7 @@ class Dataset(data.Dataset):
         label = label.squeeze(0)
         
         if self.segmentation:
-            seg = self.seg[item][:self.num_points]
+            seg = self.seg[item]
             seg = torch.from_numpy(seg)
             return point_set, label, seg, name, file
         else:
@@ -189,7 +188,7 @@ if __name__ == '__main__':
     root = os.getcwd()
 
     # choose dataset name from 'shapenetcorev2', 'shapenetpart', 'modelnet40' and 'modelnet10'
-    dataset_name = 'shapenetpart'
+    dataset_name = 'shapenetcorev2'
 
     # choose split type from 'train', 'test', 'all', 'trainval' and 'val'
     # only shapenetcorev2 and shapenetpart dataset support 'trainval' and 'val'
